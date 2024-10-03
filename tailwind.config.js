@@ -9,8 +9,11 @@ export default {
       colors: {
         primary: '#1CB0F6',
         secondary: '#C4ECFF',
-        shadow: '#1899D6',
+        dark: '#1899D6',
         longText: '#777777'
+      },
+      fontFamily: {
+        righteousRegular: 'RighteousRegular'
       }
     },
   },
