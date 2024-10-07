@@ -1,11 +1,11 @@
-import IconButton from '../components/elements/IconButton';
-import PrimaryButton from '../components/elements/PrimaryButton';
-import TextInput from '../components/elements/TextInput';
-import facebookImg from '../assets/images/facebook.png'
-import googleImg from '../assets/images/google.png'
-import waveImg from '../assets/images/wave.png'
+import IconButton from '../../components/elements/IconButton';
+import PrimaryButton from '../../components/elements/PrimaryButton';
+import TextInput from '../../components/elements/TextInput';
+import facebookImg from '../../assets/images/facebook.png'
+import googleImg from '../../assets/images/google.png'
+import waveImg from '../../assets/images/wave.png'
 
-const SignUp = () => {
+const SignUpPage = () => {
     return (
         <div className="w-full h-screen flex justify-center items-center relative">
             <div className="w-20 absolute left-5 top-5">
@@ -59,7 +59,7 @@ const SignUp = () => {
                     </li>
                 </ul>
                 <div className="w-full z-10">
-                    <PrimaryButton btnType="link" small={false}>BUAT AKUN</PrimaryButton>
+                    <PrimaryButton btnType="link" link='/intro-question/1' small={false}>BUAT AKUN</PrimaryButton>
                 </div>
                 <div className="flex w-full h-4 items-center justify-center gap-2">
                     <div className="flex flex-grow h-full">
@@ -88,4 +88,4 @@ const SignUp = () => {
     );
 }
 
-export default SignUp;
+export default SignUpPage;

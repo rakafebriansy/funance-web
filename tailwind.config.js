@@ -11,7 +11,8 @@ export default {
         secondary: '#C4ECFF',
         dark: '#1899D6',
         longText: '#777777',
-        lightText: '#AFAFAF'
+        lightText: '#AFAFAF',
+        darkText: '#4B4B4B'
       },
       fontFamily: {
         righteousRegular: 'RighteousRegular'

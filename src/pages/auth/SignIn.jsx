@@ -1,11 +1,11 @@
-import IconButton from '../components/elements/IconButton';
-import PrimaryButton from '../components/elements/PrimaryButton';
-import TextInput from '../components/elements/TextInput';
-import facebookImg from '../assets/images/facebook.png'
-import googleImg from '../assets/images/google.png'
-import waveImg from '../assets/images/wave.png'
+import IconButton from '../../components/elements/IconButton';
+import PrimaryButton from '../../components/elements/PrimaryButton';
+import TextInput from '../../components/elements/TextInput';
+import facebookImg from '../../assets/images/facebook.png'
+import googleImg from '../../assets/images/google.png'
+import waveImg from '../../assets/images/wave.png'
 
-const SignIn = () => {
+const SignInPage = () => {
     return (
         <div className="w-full h-screen flex justify-center items-center relative">
             <div className="w-20 absolute left-5 top-5">
@@ -72,4 +72,4 @@ const SignIn = () => {
     );
 }
 
-export default SignIn;
+export default SignInPage;
