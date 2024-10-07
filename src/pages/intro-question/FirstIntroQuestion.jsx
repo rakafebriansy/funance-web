@@ -46,7 +46,7 @@ const FirstIntroQuestionPage = () => {
             </li>
           </ul>
         </div>
-        <PrimaryButton btnType="button" small={false}>BUAT AKUN</PrimaryButton>
+        <PrimaryButton btnType="link" link="/intro-question/2" small={false}>LANJUT</PrimaryButton>
       </div>
     </div>
   );
