@@ -10,7 +10,8 @@ export default {
         primary: '#1CB0F6',
         secondary: '#C4ECFF',
         dark: '#1899D6',
-        longText: '#777777'
+        longText: '#777777',
+        lightText: '#AFAFAF'
       },
       fontFamily: {
         righteousRegular: 'RighteousRegular'

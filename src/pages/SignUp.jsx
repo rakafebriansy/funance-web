@@ -1,4 +1,4 @@
-import PlainButton from '../components/elements/PlainButton';
+import IconButton from '../components/elements/IconButton';
 import PrimaryButton from '../components/elements/PrimaryButton';
 import TextInput from '../components/elements/TextInput';
 import facebookImg from '../assets/images/facebook.png'
@@ -28,7 +28,7 @@ const SignUp = () => {
                 </button>
             </div>
             <div className="w-20 absolute right-5 top-5">
-                <PrimaryButton btnType="link" small={false} outlined={true}>MASUK</PrimaryButton>
+                <PrimaryButton btnType="link" link="/sign-in" small={false} outlined={true}>MASUK</PrimaryButton>
             </div>
             <form className="flex flex-col items-center w-96 gap-4">
                 <h1 className='text-2xl font-bold'>Buat Akunmu</h1>
@@ -68,7 +68,7 @@ const SignUp = () => {
                             <div className="w-full border-t"></div>
                         </div>
                     </div>
-                    <p className='text-[#AFAFAF] text-xs'>atau</p>
+                    <p className='text-lightText text-xs'>atau</p>
                     <div className=" flex-grow h-full">
                         <div className="w-full h-full grid grid-rows-2">
                             <div className="w-full border-b"></div>
@@ -77,8 +77,8 @@ const SignUp = () => {
                     </div>
                 </div>
                 <div className="w-full justify-between flex gap-5 text-xs">
-                    <PlainButton image={facebookImg} btnType="link" textColor="text-purple-500">FACEBOOK</PlainButton>
-                    <PlainButton image={googleImg} btnType="link" textColor="text-blue-500">GOOGLE</PlainButton>
+                    <IconButton image={facebookImg} btnType="link" textColor="text-purple-800 font-bold">FACEBOOK</IconButton>
+                    <IconButton image={googleImg} btnType="link" textColor="text-blue-500 font-bold">GOOGLE</IconButton>
                 </div>
             </form>
             <div className="fixed w-full bottom-0">
