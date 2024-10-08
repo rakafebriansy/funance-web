@@ -4,7 +4,7 @@ import ExperienceBar from "../elements/ExperienceBar";
 
 const AuthorizedNavbar = () => {
   return (
-    <nav className="w-full py-3 px-9 flex justify-between fixed top-0 left-0 items-center shadow-sm border-b">
+    <nav className="w-full py-3 px-9 flex justify-between fixed top-0 left-0 items-center shadow-sm border-b bg-white z-50">
       <img src={logoImg} alt="Funance Logo" className="h-5" />
       <div className="flex gap-5 items-center">
         <ExperienceBar percentage={40}>1</ExperienceBar>

@@ -1,5 +1,5 @@
 import IntroductionCard from "../../components/elements/IntroductionCard";
-import ThinProgressBar from "../../components/elements/ThinProgressBar";
+import ProgressBar from "../../components/elements/ProgressBar";
 import brochureImg from "../../assets/images/brochure.png";
 import facebook2Img from "../../assets/images/facebook-2.png";
 import friendsImg from "../../assets/images/friends.png";
@@ -11,10 +11,15 @@ import youtubeImg from "../../assets/images/youtube.png";
 import PrimaryButton from "../../components/elements/PrimaryButton";
 
 const FirstIntroQuestionPage = () => {
+  const percentage = 100/3;
+
   return (
     <div className="relative h-screen w-full flex justify-center items-center">
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[80%]">
-        <ThinProgressBar percentage={100 / 3} />
+        <div className="flex items-start justify-center gap-2 flex-col">
+          <p className="text-darkText font-semibold">{Math.floor(percentage)}% menuju penuh!</p>
+          <ProgressBar percentage={percentage} />
+        </div>
       </div>
       <div className="flex flex-col items-center justify-center gap-6">
         <div className="text-3xl font-bold text-darkText">Kamu tahu Funance darimana?</div>

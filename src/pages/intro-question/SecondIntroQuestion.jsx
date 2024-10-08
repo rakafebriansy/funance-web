@@ -1,5 +1,5 @@
 import IntroductionCard from "../../components/elements/IntroductionCard";
-import ThinProgressBar from "../../components/elements/ThinProgressBar";
+import ProgressBar from "../../components/elements/ProgressBar";
 import gameControllerImg from "../../assets/images/game-controller.png";
 import girlImg from "../../assets/images/girl.png";
 import nachosImg from "../../assets/images/nachos.png";
@@ -8,10 +8,15 @@ import othersImg from "../../assets/images/others.png";
 import PrimaryButton from "../../components/elements/PrimaryButton";
 
 const SecondIntroQuestionPage = () => {
+  const percentage = (100 / 3) * 2;
+
   return (
     <div className="relative h-screen w-full flex justify-center items-center">
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[80%]">
-        <ThinProgressBar percentage={(100 / 3) * 2} />
+        <div className="flex items-start justify-center gap-2 flex-col">
+          <p className="text-darkText font-semibold">{Math.floor(percentage)}% menuju penuh!</p>
+          <ProgressBar percentage={percentage} />
+        </div>
       </div>
       <div className="flex flex-col items-center justify-center gap-6">
         <div className="text-3xl font-bold text-darkText">Kamu biasa memakai uang untuk apa?</div>
