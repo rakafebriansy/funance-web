@@ -14,10 +14,12 @@ export default {
         longText: '#777777',
         lightText: '#AFAFAF',
         darkText: '#4B4B4B',
-        borderLight: '#E5E5E5'
+        borderLight: '#E5E5E5',
+        darker: '#3B5998'
       },
       fontFamily: {
-        righteousRegular: 'RighteousRegular'
+        righteousRegular: 'RighteousRegular',
+        bubblegumSansRegular: 'BubblegumSansRegular'
       }
     },
   },

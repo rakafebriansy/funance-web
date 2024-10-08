@@ -16,7 +16,7 @@ const Navbar = () => {
                     FITUR
                 </li>
                 <li className='w-16'>
-                    <PrimaryButton btnType="link" small={true}>MASUK</PrimaryButton>
+                    <PrimaryButton btnType="link" link="/sign-up" small={true}>MASUK</PrimaryButton>
                 </li>
             </ul>
         </nav>

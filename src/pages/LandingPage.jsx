@@ -9,7 +9,7 @@ import kuisIconImg from '../assets/images/kuis-icon.png';
 
 const LandingPage = () => {
     return (
-        <div>
+        <>
             <Navbar/>
             <section className="w-full h-screen flex justify-center items-center bg-secondary">
                 <div className="w-[90%] grid grid-cols-2 h-[50%]">
@@ -18,7 +18,7 @@ const LandingPage = () => {
                             <h1 className="font-righteousRegular text-dark">Belajar Keuangan Fun Bersama Ace</h1>
                             <h1 className="font-righteousRegular text-dark">di <span className="text-white drop-shadow-lg">Funance</span></h1>
                             <div className="w-36 z-10">
-                                <PrimaryButton btnType="link" small={false}>MULAI</PrimaryButton>
+                                <PrimaryButton btnType="link" link="/sign-up" small={false}>MULAI</PrimaryButton>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ const LandingPage = () => {
                     </ul>
                 </div>
             </section>
-        </div>
+        </>
     );
 }
 
