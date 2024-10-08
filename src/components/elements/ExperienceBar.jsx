@@ -7,7 +7,7 @@ const ExperienceBar = ({ percentage, children }) => {
                 </div>
             </div>
             <div className="bg-[#3B97D3] h-full rounded-md flex justify-end overflow-hidden items-center w-full" style={{ width: `${percentage}%` }}>
-                {Array.from({length: Math.floor(percentage/20)}, (_, i) => i).map(number => (
+                {Array.from({length: Math.floor(percentage/20)}, (_, i) => i).map(_ => (
                     <svg className="" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="5" className="h-5" transform="matrix(0.888263 -0.459335 0.627361 0.778728 0 2.26221)" fill="#2980BA"/>
                     </svg>
