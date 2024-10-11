@@ -1,5 +1,6 @@
-import IntroductionCard from "../../components/elements/IntroductionCard";
-import ProgressBar from "../../components/elements/ProgressBar";
+import IntroductionCard from "../../components/elements/card/IntroductionCard";
+import ProgressBar from "../../components/elements/bar/ProgressBar";
+import PrimaryButton from "../../components/elements/button/PrimaryButton";
 import brochureImg from "../../assets/images/brochure.png";
 import facebook2Img from "../../assets/images/facebook-2.png";
 import friendsImg from "../../assets/images/friends.png";
@@ -8,7 +9,6 @@ import instagramImg from "../../assets/images/instagram.png";
 import othersImg from "../../assets/images/others.png";
 import tiktokImg from "../../assets/images/tiktok.png";
 import youtubeImg from "../../assets/images/youtube.png";
-import PrimaryButton from "../../components/elements/PrimaryButton";
 
 const FirstIntroQuestionPage = () => {
   const percentage = 100/3;

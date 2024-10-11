@@ -1,5 +1,5 @@
 import logoImg from '../../assets/images/logo.png';
-import PrimaryButton from '../elements/PrimaryButton';
+import PrimaryButton from '../elements/button/PrimaryButton';
 
 const Navbar = () => {
     return (

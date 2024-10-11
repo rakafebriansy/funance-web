@@ -1,6 +1,6 @@
-import ProgressBar from "../../components/elements/ProgressBar";
-import PrimaryButton from "../../components/elements/PrimaryButton";
-import TextCard from "../../components/elements/TextCard";
+import ProgressBar from "../../components/elements/bar/ProgressBar";
+import PrimaryButton from "../../components/elements/button/PrimaryButton";
+import TextCard from "../../components/elements/card/TextCard";
 
 const ThirdIntroQuestionPage = () => {
   const percentage = 100;

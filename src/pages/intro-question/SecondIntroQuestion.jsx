@@ -1,11 +1,11 @@
-import IntroductionCard from "../../components/elements/IntroductionCard";
-import ProgressBar from "../../components/elements/ProgressBar";
+import IntroductionCard from "../../components/elements/card/IntroductionCard";
+import ProgressBar from "../../components/elements/bar/ProgressBar";
 import gameControllerImg from "../../assets/images/game-controller.png";
 import girlImg from "../../assets/images/girl.png";
 import nachosImg from "../../assets/images/nachos.png";
 import toyTrainImg from "../../assets/images/toy-train.png";
 import othersImg from "../../assets/images/others.png";
-import PrimaryButton from "../../components/elements/PrimaryButton";
+import PrimaryButton from "../../components/elements/button/PrimaryButton";
 
 const SecondIntroQuestionPage = () => {
   const percentage = (100 / 3) * 2;
