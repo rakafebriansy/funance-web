@@ -16,7 +16,7 @@ import ProgressBar from "../components/elements/bar/ProgressBar";
 import RoadmapCard from "../components/elements/card/RoadmapCard";
 import RoadmapItem from "../components/elements/list-item/RoadmapItem";
 
-const Dashboard = ({  }) => {
+const Course = ({  }) => {
 
     const treasure = (
         <svg className="h-full" viewBox="0 0 80 63" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -123,15 +123,40 @@ const Dashboard = ({  }) => {
     return (
         <>
         <AuthorizedNavbar />
+        <Sidebar>
+            <SidebarItem isActive={true} link="/course" image={modulIconImg}>BELAJAR</SidebarItem>
+            <SidebarItem link="/" image={kuisIconImg}>SKOR</SidebarItem>
+            <SidebarItem link="/" image={pencatatanIconImg}>PENGELUARAN</SidebarItem>
+            <SidebarItem link="/" image={savingIconImg}>TABUNG</SidebarItem>
+            <SidebarItem link="/profile" image={profilePictureImg}>PROFIL</SidebarItem>
+            <SidebarItem link="/" image={othersImg}>LAINNYA</SidebarItem>
+        </Sidebar>
+        <div className="fixed h-screen w-[25%] right-0 top- flex flex-col bg-white">
+            <div className="mt-10 w-full flex gap-5 items-center flex-col justify-center">
+                <div className="rounded-2xl border-2 p-4 flex flex-col gap-3 w-[80%]">
+                    <p className="text-darkText text-lg font-bold">Buka seluruh modul!</p>
+                    <div className="w-full gap flex items-center justify-between gap-4">
+                        <img src={goldenShieldImg} class="h-9" />
+                        <p className="text-sm text-longText">Selesaikan lebih dari 6 langkah dan siap untuk berkompetisi</p>
+                    </div>
+                </div>
+                <div className="rounded-2xl border-2 p-4 flex flex-col gap-3 w-[80%]">
+                    <div className="w-full rounded-xl bg-primary text-white text-sm font-bold px-2 py-1">Hasil Petualangan</div>
+                    <p className="text-sm text-darkText font-bold">Modul 1</p>
+                    <div className="w-full gap flex items-end justify-between gap-4">
+                        <img src={treasureImg} class="h-9" />
+                        <div className="flex flex-col flex-grow text-xs text-longText gap-2">
+                            <p>10%</p>
+                            <div className="w-full flex gap-2 items-end">
+                                <ProgressBar percentage={20} height={0.75} />
+                                <p>2/20</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div className="w-full flex justify-center relative">
-            <Sidebar>
-                <SidebarItem image={modulIconImg}>BELAJAR</SidebarItem>
-                <SidebarItem image={kuisIconImg}>SKOR</SidebarItem>
-                <SidebarItem image={pencatatanIconImg}>PENGELUARAN</SidebarItem>
-                <SidebarItem image={savingIconImg}>TABUNG</SidebarItem>
-                <SidebarItem image={profilePictureImg}>PROFIL</SidebarItem>
-                <SidebarItem image={othersImg}>LAINNYA</SidebarItem>
-            </Sidebar>
             <ul className="h-[100rem] w-[50%] mt-10">
                 <li className="relative">
                     <img src={aceFunImg} className="w-28 absolute top-[50%] -translate-y-1/2 right-[10%]" />
@@ -342,33 +367,9 @@ const Dashboard = ({  }) => {
                     </ul>
                 </li>
             </ul>
-            <div className="fixed h-screen w-[25%] right-0 bg-white">
-                <div className="mt-10 w-full flex gap-5 items-center flex-col justify-center">
-                    <div className="rounded-2xl border-2 p-4 flex flex-col gap-3 w-[80%]">
-                        <p className="text-darkText text-lg font-bold">Buka seluruh modul!</p>
-                        <div className="w-full gap flex items-center justify-between gap-4">
-                            <img src={goldenShieldImg} class="h-9" />
-                            <p className="text-sm text-longText">Selesaikan lebih dari 6 langkah dan siap untuk berkompetisi</p>
-                        </div>
-                    </div>
-                    <div className="rounded-2xl border-2 p-4 flex flex-col gap-3 w-[80%]">
-                        <div className="w-full rounded-xl bg-primary text-white text-sm font-bold px-2 py-1">Hasil Petualangan</div>
-                        <p className="text-sm text-darkText font-bold">Modul 1</p>
-                        <div className="w-full gap flex items-end justify-between gap-4">
-                            <img src={treasureImg} class="h-9" />
-                            <div className="flex flex-col flex-grow text-xs text-longText gap-2">
-                                <p>10%</p>
-                                <div className="w-full flex gap-2 items-end">
-                                    <ProgressBar percentage={20} height={0.75} />
-                                    <p>2/20</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+
         </>
     );
 };
-export default Dashboard;
+export default Course;

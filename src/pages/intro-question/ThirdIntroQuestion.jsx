@@ -32,7 +32,7 @@ const ThirdIntroQuestionPage = () => {
             </li>
           </ul>
         </div>
-        <PrimaryButton btnType="link" link="/dashboard" small={false}>LANJUT</PrimaryButton>
+        <PrimaryButton btnType="link" link="/course" small={false}>LANJUT</PrimaryButton>
       </div>
     </div>
   );

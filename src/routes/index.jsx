@@ -5,7 +5,8 @@ import SignInPage from "../pages/auth/SignIn";
 import FirstIntroQuestionPage from "../pages/intro-question/FirstIntroQuestion";
 import SecondIntroQuestionPage from "../pages/intro-question/SecondIntroQuestion";
 import ThirdIntroQuestionPage from "../pages/intro-question/ThirdIntroQuestion";
-import DashboardPage from "../pages/Dashboard";
+import CoursePage from "../pages/Course";
+import ProfilePage from "../pages/Profile";
 
 const AppRouter = () => {
     return (
@@ -17,7 +18,8 @@ const AppRouter = () => {
                 <Route path="/intro-question/1" element={<FirstIntroQuestionPage/>} />
                 <Route path="/intro-question/2" element={<SecondIntroQuestionPage/>} />
                 <Route path="/intro-question/3" element={<ThirdIntroQuestionPage/>} />
-                <Route path="/dashboard" element={<DashboardPage/>} />
+                <Route path="/course" element={<CoursePage/>} />
+                <Route path="/profile" element={<ProfilePage/>} />
             </Routes>
         </BrowserRouter>
     );
