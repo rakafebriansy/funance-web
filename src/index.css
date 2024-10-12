@@ -10,3 +10,12 @@
     font-family: 'BubblegumSansRegular';
     src: url('./assets/fonts/BubblegumSans-Regular.ttf');
 }
+.spin {
+    animation: spin 2s linear infinite; /* Animasi berputar */
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+  
