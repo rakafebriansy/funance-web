@@ -131,7 +131,7 @@ const Course = ({  }) => {
             <SidebarItem link="/profile" image={profilePictureImg}>PROFIL</SidebarItem>
             <SidebarItem link="/" image={othersImg}>LAINNYA</SidebarItem>
         </Sidebar>
-        <div className="fixed h-screen w-[25%] right-0 top- flex flex-col bg-white">
+        <div className="fixed h-screen w-[25%] right-0 top-0 flex flex-col bg-white">
             <div className="mt-10 w-full flex gap-5 items-center flex-col justify-center">
                 <div className="rounded-2xl border-2 p-4 flex flex-col gap-3 w-[80%]">
                     <p className="text-darkText text-lg font-bold">Buka seluruh modul!</p>
@@ -157,7 +157,7 @@ const Course = ({  }) => {
             </div>
         </div>
         <div className="w-full flex justify-center relative">
-            <ul className="h-[100rem] w-[50%] mt-10">
+            <ul className="w-[50%] mt-10">
                 <li className="relative">
                     <img src={aceFunImg} className="w-28 absolute top-[50%] -translate-y-1/2 right-[10%]" />
                     <RoadmapCard moduleOrder={1} link="#">Ayo mengenal uang!</RoadmapCard>

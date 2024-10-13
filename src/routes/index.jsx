@@ -6,6 +6,7 @@ import FirstIntroQuestionPage from "../pages/intro-question/FirstIntroQuestion";
 import SecondIntroQuestionPage from "../pages/intro-question/SecondIntroQuestion";
 import ThirdIntroQuestionPage from "../pages/intro-question/ThirdIntroQuestion";
 import CoursePage from "../pages/Course";
+import CourseExamplePage from "../pages/course/Example";
 import ProfilePage from "../pages/Profile";
 
 const AppRouter = () => {
@@ -19,6 +20,7 @@ const AppRouter = () => {
                 <Route path="/intro-question/2" element={<SecondIntroQuestionPage/>} />
                 <Route path="/intro-question/3" element={<ThirdIntroQuestionPage/>} />
                 <Route path="/course" element={<CoursePage/>} />
+                <Route path="/course/1" element={<CourseExamplePage/>} />
                 <Route path="/profile" element={<ProfilePage/>} />
             </Routes>
         </BrowserRouter>
