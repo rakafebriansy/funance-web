@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const PrimaryButton = ({ btnType = 'button', small, children, outlined = false, link = "#", disabled = false }) => {
+const PrimaryButton = ({ btnType = 'button', small, children, outlined = false, link = "#", disabled = false, onclick = () => {} }) => {
     const [isDisabled, setIsDisabled] = useState(false);
 
 
@@ -13,7 +13,7 @@ const PrimaryButton = ({ btnType = 'button', small, children, outlined = false, 
         );
     } else {
         return (
-            <button onClick={toggleDisable} className={`flex border-b-4 w-full relative font-semibold mb-1 rounded-full justify-center items-center ${small ? 'p-1 text-sm' : 'p-2 text-sm'} ${disabled || isDisabled ? 'bg-[#E5E5E5] text-lightText border-[#E5E5E5]' : outlined ? 'border-2 bg-white text-primary ' : 'bg-primary text-white border-dark'}`}>
+            <button onClick={onclick} className={`flex border-b-4 w-full relative font-semibold mb-1 rounded-full justify-center items-center ${small ? 'p-1 text-sm' : 'p-2 text-sm'} ${disabled || isDisabled ? 'bg-[#E5E5E5] text-lightText border-[#E5E5E5]' : outlined ? 'border-2 bg-white text-primary ' : 'bg-primary text-white border-dark'}`}>
                 <span>{children}</span>
             </button>
         );

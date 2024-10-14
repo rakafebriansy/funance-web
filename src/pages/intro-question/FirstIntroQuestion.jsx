@@ -17,7 +17,7 @@ const FirstIntroQuestionPage = () => {
     <div className="relative h-screen w-full flex justify-center items-center">
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[80%]">
         <div className="flex items-start justify-center gap-2 flex-col">
-          <p className="text-darkText font-semibold">{Math.floor(percentage)}% menuju penuh!</p>
+          <p className={`font-semibold ${percentage == 100 ? 'text-primary' : 'text-darkText'}`}>{Math.floor(percentage)}{percentage == 100 ? '% siap lanjut menjelajah!' : '% menuju penuh!'}</p>
           <ProgressBar percentage={percentage} />
         </div>
       </div>
