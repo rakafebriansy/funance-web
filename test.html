@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiring Task</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2c3e50;
+        }
+
+        .container {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border: 2px solid white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Pastikan titik memiliki ukuran yang jelas */
+        .start-point, .end-point {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            border: 2px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #start1 {
+            background-color: red;
+            left: 20px;
+            top: 175px;
+        }
+
+        #start2 {
+            background-color: blue;
+            left: 20px;
+            top: 250px;
+        }
+
+        #start3 {
+            background-color: yellow;
+            left: 20px;
+            top: 325px;
+        }
+
+        #end1 {
+            background-color: red;
+            right: 20px;
+            top: 175px;
+        }
+
+        #end2 {
+            background-color: blue;
+            right: 20px;
+            top: 250px;
+        }
+
+        #end3 {
+            background-color: yellow;
+            right: 20px;
+            top: 325px;
+        }
+
+        canvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Titik awal kabel -->
+        <div class="start-point" id="start1" data-color="red"></div>
+        <div class="start-point" id="start2" data-color="blue"></div>
+        <div class="start-point" id="start3" data-color="yellow"></div>
+
+        <!-- Titik akhir kabel -->
+        <div class="end-point" id="end1" data-color="red"></div>
+        <div class="end-point" id="end2" data-color="blue"></div>
+        <div class="end-point" id="end3" data-color="yellow"></div>
+
+        <!-- Canvas untuk menggambar kabel -->
+        <canvas id="canvas"></canvas>
+    </div>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set ukuran canvas sesuai container
+        canvas.width = 600;
+        canvas.height = 400;
+
+        // Variabel untuk menyimpan titik awal dan status dragging
+        let isDragging = false;
+        let startPoint = null;
+        let color = null;
+
+        // Array untuk menyimpan informasi tentang garis yang terhubung
+        const connectedLines = [];
+
+        // Fungsi untuk menggambar garis
+        function drawLine(x1, y1, x2, y2, color) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 4;
+            ctx.stroke();
+        }
+
+        // Fungsi untuk me-render semua garis yang tersimpan di connectedLines
+        function renderAllLines() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Bersihkan canvas
+            connectedLines.forEach(line => {
+                drawLine(line.x1, line.y1, line.x2, line.y2, line.color);
+            });
+        }
+
+        // Event listener saat mouse ditekan pada titik awal
+        document.querySelectorAll('.start-point').forEach(point => {
+            point.addEventListener('mousedown', (event) => {
+                // Cek apakah titik sudah terhubung, jika ya, tidak bisa di-drag
+                if (point.getAttribute('data-connected') === 'true') {
+                    return;
+                }
+                isDragging = true;
+                startPoint = point; // Simpan elemen start-point
+                color = point.getAttribute('data-color');
+            });
+        });
+
+        // Event listener untuk menggambar garis saat mouse bergerak
+        window.addEventListener('mousemove', (event) => {
+            if (isDragging) {
+                const rect = startPoint.getBoundingClientRect();
+                const x1 = rect.left + rect.width / 2 - canvas.getBoundingClientRect().left;
+                const y1 = rect.top + rect.height / 2 - canvas.getBoundingClientRect().top;
+                let x2 = event.clientX - canvas.getBoundingClientRect().left;
+                let y2 = event.clientY - canvas.getBoundingClientRect().top;
+
+                // Render semua garis yang sudah ada
+                renderAllLines();
+
+                // Gambar garis yang sedang digambar
+                drawLine(x1, y1, x2, y2, color);
+            }
+        });
+
+        // Event listener saat mouse dilepas untuk menyambungkan kabel
+        window.addEventListener('mouseup', (event) => {
+            if (isDragging) {
+                isDragging = false;
+
+                // Ambil titik akhir terdekat
+                const endPoints = document.querySelectorAll('.end-point');
+                let connected = false;
+
+                endPoints.forEach(endPoint => {
+                    const rect = endPoint.getBoundingClientRect();
+                    const distX = Math.abs(rect.left + rect.width / 2 - event.clientX);
+                    const distY = Math.abs(rect.top + rect.height / 2 - event.clientY);
+                    
+                    // Jika jaraknya dekat dan warna sesuai, sambungkan kabel
+                    if (distX < 30 && distY < 30 && endPoint.getAttribute('data-color') === color) {
+                        const x1 = startPoint.getBoundingClientRect().left + startPoint.getBoundingClientRect().width / 2 - canvas.getBoundingClientRect().left;
+                        const y1 = startPoint.getBoundingClientRect().top + startPoint.getBoundingClientRect().height / 2 - canvas.getBoundingClientRect().top;
+                        const x2 = rect.left + rect.width / 2 - canvas.getBoundingClientRect().left;
+                        const y2 = rect.top + rect.height / 2 - canvas.getBoundingClientRect().top;
+
+                        // Simpan garis yang terhubung
+                        connectedLines.push({ x1, y1, x2, y2, color });
+
+                        // Render semua garis, termasuk yang baru terhubung
+                        renderAllLines();
+
+                        connected = true;
+
+                        // Set attribute 'data-connected' ke true agar tidak bisa di-drag lagi
+                        endPoint.setAttribute('data-connected', 'true');
+                        startPoint.setAttribute('data-connected', 'true'); // Ini sudah elemen, jadi tidak akan null
+                    }
+                });
+
+                // Jika tidak tersambung dengan benar, bersihkan canvas
+                if (!connected) {
+                    renderAllLines();
+                }
+            }
+        });
+
+        // Perbarui ukuran canvas saat jendela diubah ukurannya
+        window.addEventListener('resize', () => {
+            canvas.width = 600;
+            canvas.height = 400;
+            renderAllLines();
+        });
+    </script>
+</body>
+</html>
