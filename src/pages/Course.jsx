@@ -131,7 +131,7 @@ const Course = ({  }) => {
             <SidebarItem link="/profile" image={profilePictureImg}>PROFIL</SidebarItem>
             <SidebarItem link="/" image={othersImg}>LAINNYA</SidebarItem>
         </Sidebar>
-        <div className="fixed h-screen w-[25%] right-0 top-0 flex flex-col bg-white">
+        <div className="fixed h-screen w-[25%] z-40 right-0 flex flex-col bg-white">
             <div className="mt-10 w-full flex gap-5 items-center flex-col justify-center">
                 <div className="rounded-2xl border-2 p-4 flex flex-col gap-3 w-[80%]">
                     <p className="text-darkText text-lg font-bold">Buka seluruh modul!</p>

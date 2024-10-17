@@ -12,6 +12,7 @@ import FirstQuizQuestionPage from "../pages/quiz/FirstQuizQuestion";
 import SecondQuizQuestionPage from "../pages/quiz/SecondQuizQuestion";
 import ThirdQuizQuestionPage from "../pages/quiz/ThirdQuizQuestion";
 import QuizScoringPage from "../pages/quiz/QuizScoring";
+import ExpensePage from "../pages/Expense";
 
 const AppRouter = () => {
   return (
@@ -30,6 +31,7 @@ const AppRouter = () => {
         <Route path="/quiz/2" element={<SecondQuizQuestionPage />} />
         <Route path="/quiz/3" element={<ThirdQuizQuestionPage />} />
         <Route path="/quiz/score" element={<QuizScoringPage />} />
+        <Route path="/expense" element={<ExpensePage />} />
       </Routes>
     </BrowserRouter>
   );
