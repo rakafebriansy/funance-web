@@ -12,9 +12,9 @@ const LandingPage = () => {
         <>
             <Navbar/>
             <section className="w-full h-screen flex justify-center items-center bg-secondary">
-                <div className="w-[90%] grid grid-cols-2 h-[50%]">
-                    <div className="flex flex-col justify-center items-start text-5xl">
-                        <div className="flex flex-col gap-12">
+                <div className="w-[90%] grid grid-cols-1 sm:grid-cols-2 h-[50%]">
+                    <div className="flex flex-col justify-center items-start text-xl sm:text-5xl order-2 sm:order-1">
+                        <div className="flex flex-col gap-4 sm:gap-12 text-left">
                             <h1 className="font-righteousRegular text-dark">Belajar Keuangan Fun Bersama Ace</h1>
                             <h1 className="font-righteousRegular text-dark">di <span className="text-white drop-shadow-lg">Funance</span></h1>
                             <div className="w-36 z-10">
@@ -22,8 +22,8 @@ const LandingPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-center h-full items-center">
-                        <img src={heroAceImg} alt="Ace" className="h-[80%]" />
+                    <div className="flex justify-center h-full items-center order-1 sm:order-2">
+                        <img src={heroAceImg} alt="Ace" className=" h-[70%] sm:h-[80%]" />
                     </div>
                 </div>
             </section>
@@ -36,19 +36,19 @@ const LandingPage = () => {
                     <path className="fill-secondary" d="M0 0H1440V63.3603C1440 63.3603 1225.79 171.588 885.819 146.814C634.589 128.507 349.223 65.2012 229.142 63.3603C109.061 61.5194 0 131 0 131V0Z"/>
                     </svg>
                 </div>
-                <div className="flex flex-col items-center gap-12">
-                    <h1 className="text-3xl font-righteousRegular text-dark">Kenapa harus dengan Funance ?</h1>
-                    <ul className="flex justify-between w-[70%]">
-                        <li>
+                <div className="flex flex-col items-center gap-8 sm:gap-12">
+                    <h1 className="text-xl sm:text-3xl font-righteousRegular text-dark">Kenapa harus dengan Funance ?</h1>
+                    <ul className="grid-cols-1 sm:grid-cols-2 flex-col sm:justify-between gap-8 w-full sm:w-[70%]">
+                        <li className="flex justify-center">
                             <FeatureCard iconImg={modulIconImg} title="Modul">Modul yang interaktif dan menyenangkan tentu tidak akan membuatmu bosan saat belajar!</FeatureCard>
                         </li>
-                        <li>
+                        <li className="flex justify-center">
                             <FeatureCard iconImg={kuisIconImg} title="Kuis">Kerjakan kuis setelah belajar dan dapatkan poin XP mu!</FeatureCard>
                         </li>
-                        <li>
+                        <li className="flex justify-center">
                             <FeatureCard iconImg={pencatatanIconImg} title="Catat Uangmu">Kamu bingung kenapa uangmu tiba-tiba habis? Ayo, catat pengeluaranmu!</FeatureCard>
                         </li>
-                        <li>
+                        <li className="flex justify-center">
                             <FeatureCard iconImg={savingIconImg} title="Ayo Menabung!">Membiasakan menabung akan membantumu ketika membutuhkan sesuatu di masa depan!</FeatureCard>
                         </li>
                     </ul>
