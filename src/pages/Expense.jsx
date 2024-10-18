@@ -46,8 +46,8 @@ const Expense = ({  }) => {
                     <div className="flex gap-5 text-lg items-center">
                         <img src={aceSmartImg} className="h-32" />
                         <div className="flex flex-col gap-3">
-                            <p className="font-bold">Pengeluaran</p>
-                            <p className="text-longText">Kemana keluarnya uangmu?</p>
+                            <p className="font-bold text-xl">Pengeluaran</p>
+                            <p className="text-longText text-xl">Kemana keluarnya uangmu?</p>
                         </div>
                     </div>
                     <div className="rounded-2xl border-2 p-4 flex flex-col gap-3 w-72">
