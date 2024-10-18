@@ -12,8 +12,11 @@ import aceSmartImg from "../assets/images/ace-smart.png"
 import PrimaryButton from "../components/elements/button/PrimaryButton";
 import DropdownInput from "../components/elements/input/DropdownInput";
 import { useRef, useState } from "react";
+import FormModal from "../components/elements/modal/FormModal";
+import TextInput from "../components/elements/input/TextInput";
 
 const Expense = ({  }) => {
+    const [isTrigger, setIsTrigger] = useState(false);
     const [selected, setSelected] = useState('semuanya');
 
 
@@ -23,6 +26,13 @@ const Expense = ({  }) => {
 
     return (
         <>
+        <FormModal title="Tambah Catatan" btnTitle="TAMBAH" isTrigger={isTrigger} setIsTrigger={setIsTrigger}>
+            <div className="flex flex-col gap-4 w-full">
+            <TextInput placeholder="Nama" name="Nama" />
+            <TextInput placeholder="Total Harga" name="Total Harga" />
+            <TextInput placeholder="Kategori" name="Kategori" />
+            </div>
+        </FormModal>
         <AuthorizedNavbar />
         <Sidebar>
             <SidebarItem isActive={true} link="/Expense" image={modulIconImg}>BELAJAR</SidebarItem>
@@ -57,7 +67,7 @@ const Expense = ({  }) => {
                     </div>
                    <div className="h-full">
                         <div className="w-32">
-                            <PrimaryButton btnType="link" link="/course" small={false}>TAMBAH</PrimaryButton>
+                            <PrimaryButton btnType="button" onclick={() => setIsTrigger(true)} small={false}>TAMBAH</PrimaryButton>
                         </div>
                    </div>
                 </div>
