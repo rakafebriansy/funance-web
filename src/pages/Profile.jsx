@@ -26,12 +26,11 @@ const Profile = ({  }) => {
         <>
         <AuthorizedNavbar />
         <Sidebar>
-            <SidebarItem link="/course" image={modulIconImg}>BELAJAR</SidebarItem>
-            <SidebarItem link="/" image={kuisIconImg}>SKOR</SidebarItem>
-            <SidebarItem link="/" image={pencatatanIconImg}>PENGELUARAN</SidebarItem>
-            <SidebarItem link="/" image={savingIconImg}>TABUNG</SidebarItem>
-            <SidebarItem isActive={true}  link="/profile" image={profilePictureImg}>PROFIL</SidebarItem>
-            <SidebarItem link="/" image={othersImg}>LAINNYA</SidebarItem>
+            <SidebarItem isActive={true} link="/course" image={modulIconImg}>BELAJAR</SidebarItem>
+            <SidebarItem link="/score" image={kuisIconImg}>SKOR</SidebarItem>
+            <SidebarItem link="/expense" image={pencatatanIconImg}>PENGELUARAN</SidebarItem>
+            <SidebarItem link="/saving" image={savingIconImg}>TABUNG</SidebarItem>
+            <SidebarItem link="/profile" image={profilePictureImg}>PROFIL</SidebarItem>
         </Sidebar>
         <div className="w-full flex justify-end relative z-10">
             <div className="w-[60%] flex flex-col gap-10 relative h-screen mt-10">

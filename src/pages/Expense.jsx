@@ -19,14 +19,13 @@ const Expense = ({  }) => {
     const [isTrigger, setIsTrigger] = useState(false);
     const [selected, setSelected] = useState('semuanya');
 
-
     const month = [
         'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
     ];
 
     return (
         <>
-        <FormModal title="Tambah Catatan" btnTitle="TAMBAH" isTrigger={isTrigger} setIsTrigger={setIsTrigger}>
+        <FormModal title="Tambah Catatan" btnTitle="TAMBAH" size="w-[50%]" isTrigger={isTrigger} setIsTrigger={setIsTrigger}>
             <div className="flex flex-col gap-4 w-full">
             <TextInput placeholder="Nama" name="Nama" />
             <TextInput placeholder="Total Harga" name="Total Harga" />
@@ -35,12 +34,11 @@ const Expense = ({  }) => {
         </FormModal>
         <AuthorizedNavbar />
         <Sidebar>
-            <SidebarItem isActive={true} link="/Expense" image={modulIconImg}>BELAJAR</SidebarItem>
-            <SidebarItem link="/" image={kuisIconImg}>SKOR</SidebarItem>
-            <SidebarItem link="/" image={pencatatanIconImg}>PENGELUARAN</SidebarItem>
-            <SidebarItem link="/" image={savingIconImg}>TABUNG</SidebarItem>
+            <SidebarItem isActive={true} link="/course" image={modulIconImg}>BELAJAR</SidebarItem>
+            <SidebarItem link="/score" image={kuisIconImg}>SKOR</SidebarItem>
+            <SidebarItem link="/expense" image={pencatatanIconImg}>PENGELUARAN</SidebarItem>
+            <SidebarItem link="/saving" image={savingIconImg}>TABUNG</SidebarItem>
             <SidebarItem link="/profile" image={profilePictureImg}>PROFIL</SidebarItem>
-            <SidebarItem link="/" image={othersImg}>LAINNYA</SidebarItem>
         </Sidebar>
         <div className="w-full flex justify-end relative">
             <div className="w-[75%] mt-10 px-14 gap-10 flex flex-col">

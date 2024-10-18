@@ -13,6 +13,7 @@ import SecondQuizQuestionPage from "../pages/quiz/SecondQuizQuestion";
 import ThirdQuizQuestionPage from "../pages/quiz/ThirdQuizQuestion";
 import QuizScoringPage from "../pages/quiz/QuizScoring";
 import ExpensePage from "../pages/Expense";
+import SavingPage from "../pages/Saving";
 
 const AppRouter = () => {
   return (
@@ -32,6 +33,7 @@ const AppRouter = () => {
         <Route path="/quiz/3" element={<ThirdQuizQuestionPage />} />
         <Route path="/quiz/score" element={<QuizScoringPage />} />
         <Route path="/expense" element={<ExpensePage />} />
+        <Route path="/saving" element={<SavingPage />} />
       </Routes>
     </BrowserRouter>
   );

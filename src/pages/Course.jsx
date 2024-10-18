@@ -125,11 +125,10 @@ const Course = ({  }) => {
         <AuthorizedNavbar />
         <Sidebar>
             <SidebarItem isActive={true} link="/course" image={modulIconImg}>BELAJAR</SidebarItem>
-            <SidebarItem link="/" image={kuisIconImg}>SKOR</SidebarItem>
-            <SidebarItem link="/" image={pencatatanIconImg}>PENGELUARAN</SidebarItem>
-            <SidebarItem link="/" image={savingIconImg}>TABUNG</SidebarItem>
+            <SidebarItem link="/score" image={kuisIconImg}>SKOR</SidebarItem>
+            <SidebarItem link="/expense" image={pencatatanIconImg}>PENGELUARAN</SidebarItem>
+            <SidebarItem link="/saving" image={savingIconImg}>TABUNG</SidebarItem>
             <SidebarItem link="/profile" image={profilePictureImg}>PROFIL</SidebarItem>
-            <SidebarItem link="/" image={othersImg}>LAINNYA</SidebarItem>
         </Sidebar>
         <div className="fixed h-screen w-[25%] z-40 right-0 flex flex-col bg-white">
             <div className="mt-10 w-full flex gap-5 items-center flex-col justify-center">
