@@ -57,8 +57,8 @@ const Saving = ({  }) => {
                     <div className="flex gap-5 text-lg items-center">
                         <img src={aceSmartImg} className="h-32" />
                         <div className="flex flex-col gap-3">
-                            <p className="font-bold">Pengeluaran</p>
-                            <p className="text-longText">Kemana keluarnya uangmu?</p>
+                            <p className="font-bold">Menabung</p>
+                            <p className="text-longText">Mari simpan uang untuk besok!</p>
                         </div>
                     </div>
                     <div className="flex flex-col gap-3">
