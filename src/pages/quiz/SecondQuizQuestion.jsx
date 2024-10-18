@@ -8,7 +8,7 @@ const SecondQuizQuestionPage = () => {
 
   return (
     <div className="relative h-screen w-full flex justify-center items-center">
-      <QuizNavigationPartial link="/quiz/3" />
+      <QuizNavigationPartial link="/quiz/score" />
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[80%]">
         <div className="flex justify-center gap-2 flex-col">
           <p className={`font-semibold ${percentage == 100 ? 'text-primary' : 'text-darkText'}`}>{Math.floor(percentage)}{percentage == 100 ? '% siap lanjut menjelajah!' : '% menuju penuh!'}</p>
@@ -16,7 +16,7 @@ const SecondQuizQuestionPage = () => {
         </div>
       </div>
       <div className="flex flex-col items-center text-center justify-center gap-6 w-[60%]">
-        <div className="text-3xl font-bold text-darkText">Tonton Video Berikut</div>
+        <p className="text-3xl font-bold text-darkText">Tonton Video Berikut</p>
         <div className="w-full flex justify-center relative">
           <img src={summerArtImg} className="w-[50%] rounded-3xl" />
           <svg className="w-12 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 fill-white" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
